@@ -10,6 +10,7 @@ WORKDIR /mnt/APIServer
 RUN apt-get update && apt-get -y install sudo
 RUN sudo apt install -y python3 python3-pip curl
 RUN sudo apt install -y ${Apt_Dependencies}
+RUN pip3 install -U pip
 RUN sudo apt update
 RUN pip3 install requests pytz simplejson Flask
 RUN pip3 install ${Pip_Depenendcies}
