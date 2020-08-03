@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 #Setup Environment
 ENV APIFileName bot.py
-ENV Pip_Depenendcies "" 
-ENV Apt_Dependencies ""
+ENV Pip_Depenendcies "iperf3" 
+ENV Apt_Dependencies "iperf3"
 VOLUME ["/mnt/APIServer"]
 WORKDIR /mnt/APIServer
 
