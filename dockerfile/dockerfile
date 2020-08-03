@@ -1,0 +1,20 @@
+FROM ubuntu:latest
+#Setup Environment
+ENV APIFileName bot.py
+ENV Pip_Depenendcies "" 
+ENV Apt_Dependencies ""
+VOLUME ["/mnt/APIServer"]
+WORKDIR /mnt/APIServer
+
+#Install Deps
+RUN apt-get update && apt-get -y install sudo
+RUN sudo apt install -y python3 python3-pip curl
+RUN sudo apt install -y ${Apt_Dependencies}
+RUN sudo apt update
+RUN pip3 install requests pytz simplejson Flask
+RUN pip3 install ${Pip_Depenendcies}
+
+RUN echo "Installed Depenendcies"
+
+#Run Bot
+CMD python3 ${APIFileName}
