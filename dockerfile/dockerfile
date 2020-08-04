@@ -12,8 +12,10 @@ RUN sudo apt install -y python3 python3-pip curl
 RUN sudo apt install -y ${Apt_Dependencies}
 RUN pip3 install -U pip
 RUN sudo apt update
-RUN pip3 install requests pytz simplejson Flask
+RUN pip3 install requests pytz simplejson Flask flask
 RUN pip3 install ${Pip_Depenendcies}
+RUN pip3 install -U Flask
+RUN sudo apt update
 
 RUN echo "Installed Depenendcies"
 
